@@ -1,0 +1,26 @@
+{
+  "name": "@rmw/coffee_template",
+  "repository": "git@github.com:rmw-lib/coffee_template.git",
+  "version": "0.0.0",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "main": "index.js",
+  "author": "gcxfd <i@rmw.link>",
+  "license": "AGPL-3.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "rm -rf lib && rsync -av --include='*/' --include='*.js' --include='*.mjs' --exclude=* src/ lib/ && npx coffee --compile --output lib src/ && npx md-include .markdown.json"
+  },
+  "devDependencies": {
+    "@rmw/console": "^0.0.20",
+    "@rmw/source-map-support": "^0.5.22",
+    "coffeescript": "^2.6.1",
+    "@rmw/md-include": "^0.4.8"
+  },
+  "dependencies": {}
+}
