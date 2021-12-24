@@ -6,13 +6,19 @@ cd $_DIR
 
 set -ex
 
-git pull
-
 version=$(cat package.json|jq -r '.version')
+
+add(){
+git add -u
+git commit -m v$version || true
+}
+
+add
+
+git pull
 
 npm set unsafe-perm true
 npm version patch
-git add -u
-git commit -m v$version || true
+add
 git push
 npm publish --access=public
