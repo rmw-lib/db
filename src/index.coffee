@@ -24,7 +24,7 @@ class Kv extends Map
     stream.end()
     promise
 
-Db = (path)=>
+export default Db = (path)=>
   kv = new Kv path
 
   if not existsSync path
@@ -50,20 +50,3 @@ Db = (path)=>
       stream.on 'end',=>resolve(kv)
       stream.on 'error',reject
   )
-
-
-export default main = new Proxy(
-  Db
-  get:(_,name)=>
-    Db(name)
-)
-
-if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
-  {default:thisdir} = await import('@rmw/thisdir')
-
-  pwd = thisdir import.meta
-  db = await main[pwd+'/test.db']
-  console.log db
-  console.log db.get('path')
-  await db.save()
-  process.exit()

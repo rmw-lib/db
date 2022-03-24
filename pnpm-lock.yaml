@@ -4,6 +4,7 @@ specifiers:
   '@rmw/coffee-loader': ^0.0.4
   '@rmw/console': ^0.0.20
   '@rmw/md-include': ^0.4.8
+  '@rmw/thisdir': ^0.0.2
   coffeescript: ^2.6.1
   msgpackr: ^1.5.5
 
@@ -11,6 +12,7 @@ devDependencies:
   '@rmw/coffee-loader': 0.0.4
   '@rmw/console': 0.0.20
   '@rmw/md-include': 0.4.8
+  '@rmw/thisdir': 0.0.2
   coffeescript: 2.6.1
   msgpackr: 1.5.5
 
@@ -65,6 +67,10 @@ packages:
     dependencies:
       buffer-from: 1.1.2
       source-map: 0.6.1
+    dev: true
+
+  /@rmw/thisdir/0.0.2:
+    resolution: {integrity: sha512-KYV1t5GseFwwM0Q4mIHasm6csy9eVImOD9YLU5y8Ya3jb1hm4ahroSJSJZqFUsUAFC7CNnpvkzE703NQBCKIUg==}
     dev: true
 
   /ansi-styles/3.2.1:

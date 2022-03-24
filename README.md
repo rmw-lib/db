@@ -13,9 +13,20 @@
 #!/usr/bin/env coffee
 
 import "@rmw/console/global"
-import db from '@rmw/db'
+import Db from '@rmw/db'
+import thisdir from '@rmw/thisdir'
+import {join} from 'path'
 
-console.log await db()
+PWD = thisdir import.meta
+db = await Db join PWD,'test.db'
+
+console.log db
+
+db.set 1,[2,3,4,5]
+
+await db.save()
+
+process.exit()
 ```
 
 ## 关于

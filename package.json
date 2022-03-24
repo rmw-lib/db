@@ -20,6 +20,7 @@
     "@rmw/coffee-loader": "^0.0.4",
     "@rmw/console": "^0.0.20",
     "@rmw/md-include": "^0.4.8",
+    "@rmw/thisdir": "^0.0.2",
     "coffeescript": "^2.6.1",
     "msgpackr": "^1.5.5"
   }
