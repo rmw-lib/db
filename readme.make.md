@@ -1,9 +1,9 @@
-# @rmw/coffee_template
+# @rmw/db
 
 
 ##  安装
 
-```yarn add @rmw/coffee_template ``` 或者 ``` npm install @rmw/coffee_template```
+```yarn add @rmw/db ``` 或者 ``` npm install @rmw/db```
 
 ## 使用
 
