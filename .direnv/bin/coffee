@@ -4,8 +4,8 @@ DIR=$(realpath $(dirname $(realpath "$0"))/../..)
 
 export NODE_PATH="$DIR/node_modules:$NODE_PATH"
 
-if [ $@ ];then
-filepath=$(realpath $@)
+if [ $1 ];then
+filepath=$(realpath $1)
 fi
 
 exec node  --trace-warnings \
@@ -15,4 +15,4 @@ exec node  --trace-warnings \
   --expose-gc \
   --experimental-loader \
   "@rmw/coffee-loader" \
-  --unhandled-rejections=strict $filepath
+  --unhandled-rejections=strict $filepath ${@:2:$#}
